@@ -1,6 +1,7 @@
 package com.kayo.mutiadapter.rules;
 
 import android.annotation.SuppressLint;
+import android.util.SparseArray;
 import android.view.ViewGroup;
 
 import com.kayo.mutiadapter.ColumnRule;
@@ -36,8 +37,9 @@ import java.util.Map;
 public class AdapterRulesManager<D extends MutiData> {
 
     private List<D> datas = new ArrayList<>();
-    @SuppressLint("UseSparseArrays")
-    private Map<Integer,Rule> ruleMap = new HashMap<>();
+    private SparseArray<Rule> ruleSparseArray =  new SparseArray<>();
+//    private Map<Integer,Rule> ruleMap = new HashMap<>();
+
     private MutiRecyclerView recyclerView;
     private Adapter adapter;
     private int footerType;
@@ -55,8 +57,12 @@ public class AdapterRulesManager<D extends MutiData> {
 
     public AdapterRulesManager addRule(Rule rule){
         int i = rule.layoutId();
-        if (!ruleMap.containsKey(i)){
-            ruleMap.put(i,rule);
+//        if (!ruleMap.containsKey(i)){
+//            ruleMap.put(i,rule);
+//        }
+        Rule rule1 = ruleSparseArray.get(i);
+        if (rule1 == null){
+            ruleSparseArray.put(i,rule);
         }
         return this;
     }
@@ -81,12 +87,12 @@ public class AdapterRulesManager<D extends MutiData> {
     }
 
     public MutiHolder getHolder(ViewGroup parent, int viewType){
-        Rule rule = ruleMap.get(viewType);
+        Rule rule = ruleSparseArray.get(viewType);
         return rule.holder(parent,rule.layoutId());
     }
 
     public void bindData(MutiHolder holder,int position){
-        Rule rule = ruleMap.get(getType(position));
+        Rule rule = ruleSparseArray.get(getType(position));
         rule.convert(holder,getItem(position));
     }
 

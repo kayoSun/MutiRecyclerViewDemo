@@ -6,11 +6,12 @@ import android.view.ViewGroup;
 
 import com.kayo.mutiadapter.MutiAdapter;
 import com.kayo.mutiadapter.MutiHolder;
+import com.kayo.mutirecyclerviewdemo.holder.DemoHolder;
 
 /**
  * Created by shilei on 17/2/16.
  * <pre>
- *
+ *      数据适配器
  * </pre>
  */
 

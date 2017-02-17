@@ -1,14 +1,16 @@
-package com.kayo.mutirecyclerviewdemo;
+package com.kayo.mutirecyclerviewdemo.holder;
 
 import android.view.View;
 import android.widget.TextView;
 
 import com.kayo.mutiadapter.MutiHolder;
+import com.kayo.mutirecyclerviewdemo.DemoData;
+import com.kayo.mutirecyclerviewdemo.R;
 
 /**
  * Created by shilei on 17/2/16.
  * <pre>
- *
+ * 样式1
  * </pre>
  *
  */
@@ -24,5 +26,6 @@ public class DemoHolder extends MutiHolder<DemoData>{
     @Override
     public void bindData(DemoData data) {
         textView.setText(data.getText());
+
     }
 }
