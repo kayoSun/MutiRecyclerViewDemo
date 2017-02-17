@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
@@ -34,11 +34,11 @@ dependencies {
     compile 'com.facebook.rebound:rebound:0.3.8'
 }
 
-publish {
-    userOrg = 'kayosun'
-    groupId = 'com.kayo'
-    artifactId = 'MutiRecyclerView'
-    publishVersion = '1.0.0'
-    desc = ' 多视图列表 '
-    website = 'https://github.com/kayoSun/MutiRecyclerViewDemo'
-}
+//publish {
+//    userOrg = 'kayosun'
+//    groupId = 'com.kayo'
+//    artifactId = 'MutiRecyclerView'
+//    publishVersion = '1.0.0'
+//    desc = ' 多视图列表 '
+//    website = 'https://github.com/kayoSun/MutiRecyclerViewDemo'
+//}
