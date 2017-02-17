@@ -9,6 +9,7 @@ MutiRecycler 演示工程
 
 #####添加依赖，在app目录下的build.gradle中添加如下：
 
+ <pre><code>compile 'com.kayo:MutiRecyclerView:1.0.0'<code></pre>
 
 
 #####1 可以 作为普通的RecyclerView使用
